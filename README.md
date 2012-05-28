@@ -40,7 +40,7 @@ end
 
 ENV['WHIRL_LOOP_INTERVAL'] = 60 # <= Whirl will now run jobs every 60 seconds
 
-Whirl.run # <= continuously loops over the DoBusiness and MonitorSomeStuff jobs
+Whirl.run # <= continuously loops over the DoBusiness and MonitorSomeStuff jobs at the set interval
 ```
 
 ## TODO
