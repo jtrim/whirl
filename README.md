@@ -36,6 +36,10 @@ class Whirl::Job::MonitorSomeStuff < Whirl::Job::Base
   end
 end
 
+# By default, Whirl runs jobs at an interval of 10 seconds. Change this via:
+
+ENV['WHIRL_LOOP_INTERVAL'] = 60 # <= Whirl will now run jobs every 60 seconds
+
 Whirl.run # <= continuously loops over the DoBusiness and MonitorSomeStuff jobs
 ```
 
