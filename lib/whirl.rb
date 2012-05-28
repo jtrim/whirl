@@ -5,7 +5,6 @@ require 'thor'
 require 'httparty'
 require 'redis'
 require 'json'
-require 'pry'
 
 require 'whirl/version'
 require 'whirl/redis'
