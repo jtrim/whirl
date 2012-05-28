@@ -35,7 +35,7 @@ module Whirl
         end
       end
 
-      sleep whirl_interval
+      sleep whirl_interval.to_i
     end while loop?
   end
 
