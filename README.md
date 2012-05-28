@@ -18,31 +18,26 @@ Or install it yourself as:
 
 ## Usage
 
-Step one: load Whirl:
+A contrived example, but this is all you need:
 
-    require 'whirl'
+```ruby
+require 'whirl'
 
-Step two: define a job that does an action
+class Whirl::Job::DoBusiness < Whirl::Job::Base
+  action do
+    say "HA HA! _BUSINESS_: http://i.imgur.com/EFcX1.jpg", :red
+  end
+end
 
-    class Whirl::Job::GoDoSomething < Whirl::Job::Base
-      action do
-        # Monitor a website, make api calls, send emails...
-        say "HA HA! _BUSINESS_", :red # see: http://i.imgur.com/EFcX1.jpg
-      end
-    end
+class Whirl::Job::MonitorSomeStuff < Whirl::Job::Base
+  action do
+    # Monitor a website, make api calls, send emails...
+    say "Do ALL THE MONITORING!"
+  end
+end
 
-Step three: Run Whirl. e.g.:
-
-    # Rakefile
-    require 'rake'
-    require 'whirl'
-    require 'job/go_do_something' # job we defined above
-
-    desc "Whirl"
-    task :whirl { Whirl.run }
-
-    # from terminal
-    rake whirl # <= Runs jobs continuously.
+Whirl.run # <= continuously loops over the DoBusiness and MonitorSomeStuff jobs
+```
 
 ## TODO
 
