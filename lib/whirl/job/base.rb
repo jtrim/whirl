@@ -42,6 +42,10 @@ module Whirl
         "#{self.name}:#{val}"
       end
 
+      def self.redis
+        @redis ||= Whirl::Redis.new
+      end
+
     end
 
   end
