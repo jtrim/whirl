@@ -4,7 +4,6 @@ module Whirl
 
   class Redis
     extend Forwardable
-    include Singleton
 
     def_delegators :@client, :get, :set
 
