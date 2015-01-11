@@ -1,7 +1,6 @@
 require 'forwardable'
 
 module Whirl
-
   class Redis
     extend Forwardable
 
@@ -17,7 +16,5 @@ module Whirl
         ::Redis.new
       end
     end
-
   end
-
 end

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Whirl do
-
   module Whirl::Job
     class FakeJob
       def self.perform(*); end
@@ -11,15 +10,12 @@ describe Whirl do
   end
 
   describe '.jobs' do
-
     it "returns an array of all constants under Whirl::Job that respond to #perform, less Base" do
       Whirl.jobs.should == [Whirl::Job::FakeJob]
     end
-
   end
 
   describe '.run' do
-
     # Don't want Whirl to fork, keep spinning or have delays.
     #
     before do
@@ -48,7 +44,5 @@ describe Whirl do
 
       Whirl.run
     end
-
   end
-
 end

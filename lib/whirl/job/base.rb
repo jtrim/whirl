@@ -1,9 +1,6 @@
 module Whirl
-
   module Job
-
     class Base
-
       class << self
         attr_accessor :job_action
       end
@@ -45,9 +42,6 @@ module Whirl
       def self.redis
         @redis ||= Whirl::Redis.new
       end
-
     end
-
   end
-
 end

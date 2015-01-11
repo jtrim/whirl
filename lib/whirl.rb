@@ -11,7 +11,6 @@ require 'whirl/redis'
 require 'whirl/job/base'
 
 module Whirl
-
   def self.jobs
     jobs = Whirl::Job.constants.
       map { |d| Whirl::Job.const_get(d) }.
@@ -46,5 +45,4 @@ module Whirl
   def self.whirl_interval
     ENV['WHIRL_LOOP_INTERVAL'] || 10
   end
-
 end
